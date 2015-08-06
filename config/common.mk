@@ -120,9 +120,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
-# T-Mobile theme engine
-include vendor/cm/config/themes_common.mk
-
 # Required CM packages
 PRODUCT_PACKAGES += \
     Development \
@@ -144,17 +141,7 @@ PRODUCT_PACKAGES += \
     CMWallpapers \
     CMFileManager \
     Eleven \
-    LockClock \
-    CMUpdater \
-    CMAccount \
-    CMHome \
-    CyanogenSetupWizard
-
-# CM Platform Library
-PRODUCT_PACKAGES += \
-    org.cyanogenmod.platform-res \
-    org.cyanogenmod.platform \
-    org.cyanogenmod.platform.xml
+    LockClock
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
