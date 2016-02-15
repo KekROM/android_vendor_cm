@@ -298,7 +298,8 @@ else
 endif
 
 KEK_ANDROID_VERSION := 6.0
-KEK_VERSION := $(KEK_ANDROID_VERSION)-$(shell date -u +%Y%m%d)-$(TARGET_DEVICE)
+TARGET_KEK_DEVICE := $(subst cm_,,$(TARGET_PRODUCT))
+KEK_VERSION := $(KEK_ANDROID_VERSION)-$(shell date -u +%Y%m%d)-$(TARGET_KEK_DEVICE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
