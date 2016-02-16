@@ -297,16 +297,14 @@ else
     CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
 endif
 
-KEK_ANDROID_VERSION := 6.0
-TARGET_KEK_DEVICE := $(subst cm_,,$(TARGET_PRODUCT))
-KEK_VERSION := $(KEK_ANDROID_VERSION)-$(shell date -u +%Y%m%d)-$(TARGET_KEK_DEVICE)
+# Kek
+include vendor/kek/kek.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.version=$(CM_VERSION) \
   ro.cm.releasetype=$(CM_BUILDTYPE) \
   ro.modversion=$(CM_VERSION) \
-  ro.cmlegal.url=https://cyngn.com/legal/privacy-policy \
-  ro.kek.version=$(KEK_VERSION)
+  ro.cmlegal.url=https://cyngn.com/legal/privacy-policy
 
 -include vendor/cm-priv/keys/keys.mk
 
